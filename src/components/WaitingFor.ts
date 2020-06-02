@@ -46,14 +46,14 @@ export const WaitingFor = Vue.component("waiting-for", {
                 xhr.onload = () => {
                     if (xhr.status === 200) {
                         const result = xhr.response;
-                        if (result["result"] === "GO") {
+                        if (result["result"] === "GO" && this.waitingfor === undefined ) {
                             (vueApp as any).$root.updatePlayer();
 
-                            if (Notification.permission !== 'granted') {
+                            if (Notification.permission !== "granted") {
                                 Notification.requestPermission();
                             }
                             if (Notification.permission === "granted") {
-                                new Notification('Terraforming Mars Online', {
+                                new Notification("Terraforming Mars Online", {
                                     icon: "/favicon.ico",
                                     body: "It's your turn!",
                                 });
@@ -78,8 +78,8 @@ export const WaitingFor = Vue.component("waiting-for", {
         }
     },
     render: function (createElement) {
+        (this as any).waitForUpdate();
         if (this.waitingfor === undefined) {
-            (this as any).waitForUpdate();
             return createElement("div", $t("Not your turn to take any actions"));
         }
         const input = new PlayerInputFactory().getPlayerInput(createElement, this.players, this.player, this.waitingfor, (out: Array<Array<string>>) => {
@@ -93,11 +93,11 @@ export const WaitingFor = Vue.component("waiting-for", {
                     root.player = xhr.response;
                     root.playerkey++;
                     root.screen = "player-home";
-                    if (root.player.phase == "end" && window.location.pathname !== "/the-end") {
+                    if (root.player.phase === "end" && window.location.pathname !== "/the-end") {
                         (window as any).location = (window as any).location;
                     }
 
-                } else if (xhr.status === 400 && xhr.responseType === 'json') {
+                } else if (xhr.status === 400 && xhr.responseType === "json") {
                     const element: HTMLElement | null = document.getElementById("dialog-default");
                     const message: HTMLElement | null = document.getElementById("dialog-default-message");
                     if (message !== null && element !== null && (element as HTMLDialogElement).showModal !== undefined) {
