@@ -259,7 +259,7 @@
     "Giant Ice Asteroid": "巨冰行星",
     "Raise temperature 2 steps and place 2 ocean tiles. Remove up to 6 plants from any player.": "提升火星温度2格并放置2个海洋版块。移除任一玩家最多6个植物资源",
 
-    "Ganymede Colony": "木卫三殖民地",
+    "Ganymede Colony": "Ganymede Colony",
     "Place a city tile ON THE RESERVED AREA. 1 VP per Jovian tag you have.": "放置一个城市版块在'预留位置'上。你每有一个木星标记,获得1分",
 
     "Callisto Penal Mines": "木卫四开采法",
@@ -522,7 +522,7 @@
   "Magnetic Field Generators": "磁力发动机",
   "Decrease your Energy production 4 steps and increase your Plant production 2 steps. Raise your TR 3 steps.": "电力产量-4 植物产量+2 改造度+3",
 
-  "Shuttles": "Воздушный транспорт",
+  "Shuttles": "穿梭机",
   "Requires 5% oxygen. Decrease your Energy production 1 step and increase your MC production 2 steps.": "（需求：氧气浓度≥5％）电力产量-1 金钱产量+2",
 
   "Import of Advanced GHG": "输入高级温室气体",
